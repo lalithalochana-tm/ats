@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">-->
+<suite name="cognitestSuite">
+
+    <listeners>
+        <listener class-name="com.listener.TestListener"></listener>
+    </listeners>
+
+    <test thread-count="1" name="cognitestTest3">
+        <groups>
+            <run>
+                <include name="Tier2Admin"></include>
+            </run>
+        </groups>
+        <parameter name="Browser" value="chrome"></parameter>
+
+        <classes>
+
+            <class name="com.cognitest.testcases.TC_referenceTestCase"/>
+
+        </classes>
+    </test>
+
+</suite> <!-- cognitestSuite -->

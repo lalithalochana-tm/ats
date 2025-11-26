@@ -1,0 +1,12 @@
+{
+  "name": "ats_all_exec",
+  "version": "1.0.0",
+  "description": "The West-Minster framework offers a comprehensive set of tools and utilities designed for application development, particularly focusing on configuration management, data handling, UI interactions, and testing. Below are some key components and their functionalities:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
