@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
@@ -28,6 +28,7 @@
   </properties>
 
   <dependencies>
+
     <!-- Playwright Java -->
     <dependency>
       <groupId>com.microsoft.playwright</groupId>
@@ -89,22 +90,25 @@
       <artifactId>owner</artifactId>
       <version>${owner.version}</version>
     </dependency>
+
   </dependencies>
 
   <build>
     <plugins>
 
-      <!-- Surefire Plugin: Auto-runs ALL TestNG tests -->
+      <!-- Surefire: Enables TestNG + XML reporting for Jenkins -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${maven-surefire-plugin.version}</version>
         <configuration>
-          <!-- No suite XML → auto-detect TestNG tests -->
+          <testngArtifactName>org.testng:testng</testngArtifactName>
+          <reportsDirectory>target/surefire-reports</reportsDirectory>
+          <useSystemClassLoader>false</useSystemClassLoader>
         </configuration>
       </plugin>
 
-      <!-- Java compiler plugin -->
+      <!-- Compiler plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
